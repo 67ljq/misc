@@ -1,0 +1,2 @@
+10-05 17:02:05 DEBUG  (pid:6643 file:src/zlog.c line:17) ------zlog_init start------
+10-05 17:02:05 DEBUG  (pid:6643 file:src/zlog.c line:18) ------compile time[Oct  5 2018 17:01:42], version[1.2.12]------
