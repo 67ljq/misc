@@ -32,15 +32,21 @@ int main()
 		printf("\nReadConfig error\n");
 		return -1;
 	}
-
 	
 	setenv("ZLOG_PROFILE_ERROR", LOG_PROFILE_ERROR, 1);
 	setenv("ZLOG_PROFILE_DEBUG", LOG_PROFILE_DEBUG, 1);
 	rc = zlog_init(NULL);
-	if(rc)
+	if(rc < 0)
 	{
 		printf("\n---syntax error, see error message above\n");
 		return -1;
+	}
+
+	/*ntp client*/
+	rc = ntp_sync_time(10);
+	if(rc < 0)
+	{
+		printf("\n---ntp sync time failed---\n");
 	}
 	
 	return 0;
